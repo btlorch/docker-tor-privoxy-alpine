@@ -6,5 +6,5 @@ RUN apk --update add privoxy tor runit tini
 
 COPY service /etc/service/
 
-ENTRYPOINT ["tini", "--"]
+ENTRYPOINT ["/entrypoint"]
 CMD ["runsvdir", "/etc/service"]
